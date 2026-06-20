@@ -1,0 +1,27 @@
+{
+  "title": "小鸡吃饭啦",
+  "idea": "吃饭",
+  "character": "一只鸡, soft natural lighting, gentle shadows, pleasant atmosphere, medium shot, balanced composition, clear view, masterpiece, best quality, highly detailed, 8k uhd, sharp focus, professional artwork",
+  "pages": [
+    {
+      "page": 1,
+      "text": "清晨，阳光照进鸡窝，小鸡起床了。它的肚子咕咕叫，好想吃早饭呀！",
+      "scene": "一只黄色小鸡站在干草铺成的鸡窝里，阳光从窗户照进来，小鸡摸着肚子，表情期待。柔和的光线，温馨的氛围，中景镜头，清晰构图。"
+    },
+    {
+      "page": 2,
+      "text": "小鸡跑到院子里，看到妈妈撒了一地金黄的谷粒。它开心地啄啊啄，一颗、两颗、三颗……",
+      "scene": "小鸡在绿色草地上低头啄地上的谷粒，鸡妈妈站在旁边微笑看着。背景有红房子和篱笆，阳光明媚，画面清晰明亮，中景。"
+    },
+    {
+      "page": 3,
+      "text": "突然，一条小虫子从土里钻出来。小鸡停下啄谷粒，歪着头看虫子，心里想：要不要尝尝呢？",
+      "scene": "小鸡歪着脑袋，专注地看着地上一条粉色小虫子，周围是泥土和几株小草。光线柔和，特写镜头，细节丰富。"
+    },
+    {
+      "page": 4,
+      "text": "小鸡鼓起勇气，叼起虫子吞了下去。哇，真好吃！它拍拍翅膀，高兴地叫起来：“咯哒咯哒！”",
+      "scene": "小鸡仰头吞下虫子，翅膀微微张开，脸上露出满足的表情。背景是夕阳下的院子，金色光线，快乐氛围，中景。"
+    }
+  ]
+}
