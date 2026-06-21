@@ -1,0 +1,15 @@
+character: 一只可爱的白色小兔子
+idea: 小兔子在森林里迷路了
+num_pages: 4
+style:
+  id: '1'
+  name: 水彩绘本
+  prompt: children's book illustration, watercolor painting, soft pastel colors, gentle
+    lighting, storybook art style, cute and friendly
+created_at: '2026-06-21 18:11:37'
+safety_review:
+  checked_at: '2026-06-21 18:11:37'
+  risk_level: medium
+  categories: []
+  warnings:
+  - 包含轻微紧张元素，建议处理成温和、积极、儿童友好表达

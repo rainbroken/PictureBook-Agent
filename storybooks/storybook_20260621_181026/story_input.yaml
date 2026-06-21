@@ -1,0 +1,15 @@
+character: 一只可爱的小兔子，带着红色蝴蝶结
+idea: 小兔子们在公园迷路了，在她的朋友们帮助下找到了路
+num_pages: 5
+style:
+  id: '1'
+  name: 水彩绘本
+  prompt: children's book illustration, watercolor painting, soft pastel colors, gentle
+    lighting, storybook art style, cute and friendly
+created_at: '2026-06-21 18:10:26'
+safety_review:
+  checked_at: '2026-06-21 18:10:26'
+  risk_level: medium
+  categories: []
+  warnings:
+  - 包含轻微紧张元素，建议处理成温和、积极、儿童友好表达

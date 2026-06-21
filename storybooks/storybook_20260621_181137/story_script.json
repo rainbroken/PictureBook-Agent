@@ -1,0 +1,35 @@
+{
+  "title": "小兔子的回家路",
+  "idea": "小兔子在森林里迷路了",
+  "character": "一只可爱的白色小兔子, cute little rabbit, soft white fur, pink nose, gentle eyes, soft natural lighting, gentle shadows, pleasant atmosphere, medium shot, balanced composition, clear view, masterpiece, best quality, highly detailed, 8k uhd, sharp focus, professional artwork",
+  "pages": [
+    {
+      "page": 1,
+      "text": "小兔子在森林里蹦蹦跳跳，追着一只蝴蝶。突然，蝴蝶飞走了，小兔子发现自己迷路了。",
+      "scene": "一只可爱的白色小兔子在茂密的森林中跳跃，追逐一只色彩鲜艳的蝴蝶，周围是高大的树木和绿色的灌木，阳光透过树叶洒下斑驳的光影，小兔子的表情充满好奇和快乐。"
+    },
+    {
+      "page": 2,
+      "text": "小兔子感到害怕，它坐下来，红红的眼睛湿润了。这时，一只小鸟飞过来，问它为什么哭。",
+      "scene": "小兔子坐在一棵大树下的石头上，耳朵下垂，眼神悲伤，泪水在眼眶中打转。一只小鸟停在附近的树枝上，歪着头看着小兔子，阳光柔和地照在小兔子身上，背景是深绿色的森林。"
+    },
+    {
+      "page": 3,
+      "text": "小鸟说：“别怕，我可以带你回家！”小兔子擦干眼泪，跟着小鸟穿过树林，跳过小溪。",
+      "scene": "小兔子跟在飞翔的小鸟后面，穿过一片开满野花的草地，跳过一条清澈的小溪，溪水在阳光下闪闪发光。小兔子的表情从害怕变为希望，森林的景色逐渐变得明亮。"
+    },
+    {
+      "page": 4,
+      "text": "终于，小兔子看到了自己的家——一个温暖的小洞。它感激地对小鸟说谢谢，然后快乐地跳了进去。",
+      "scene": "小兔子站在一个被鲜花环绕的小洞前，洞口传出温暖的灯光。小鸟盘旋在洞口上方，小兔子回头对小鸟微笑，画面充满温馨和安心，夕阳的余晖为场景染上金色。"
+    }
+  ],
+  "safety_review": {
+    "checked_at": "2026-06-21 18:11:50",
+    "risk_level": "medium",
+    "categories": [],
+    "warnings": [
+      "包含轻微紧张元素，建议处理成温和、积极、儿童友好表达"
+    ]
+  }
+}
