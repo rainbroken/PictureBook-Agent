@@ -13,10 +13,8 @@ A_user/
 ├── easy_storybook.py        # 简单模式入口（推荐）
 ├── storybook_generator.py   # 核心生图引擎
 ├── prompt_optimizer.py      # 提示词优化器
-├── run.py                   # API 连通测试（旧）
 ├── test_qwen_api.py         # 千问 API 连通测试
 ├── generate_easy.py         # 生成脚本（开发用）
-├── test_fix.py              # 修复测试
 ├── api_outputs/             # 测试图片输出
 ├── output/                  # 旧版输出目录
 └── storybooks/              # 绘本输出目录（运行后生成）
@@ -208,9 +206,7 @@ CHARACTER_CONSISTENCY_MODE = "seed"       # 种子模式（兼容）
 
 独立测试 DashScope API 连通性的脚本。提交一个简单的生图任务，轮询等待完成后下载图片。用于排查 API Key 和网络问题。
 
-### `run.py` — 旧版 SD API 测试
 
-原始的 Stable Diffusion WebUI API 测试脚本，已不再使用。
 
 ### `generate_easy.py` — 开发工具
 
