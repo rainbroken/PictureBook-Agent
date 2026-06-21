@@ -54,6 +54,11 @@ from generate_from_yaml import (
     generate_from_yaml, load_yaml as _load_yaml_data,
     generate_story_only, generate_first_page_candidates, select_first_page_and_continue,
 )
+from safety_guard import (
+    validate_story_request,
+    validate_story_script_update,
+    append_safety_audit_log,
+)
 
 app = Flask(__name__)
 
@@ -169,6 +174,24 @@ def api_save():
     if style_key not in STYLE_TEMPLATES:
         return jsonify({"error": "无效的绘本风格"}), 400
 
+    # 伦理合规检查：儿童友好内容、隐私信息、Prompt 注入/越狱攻击
+    safety_result = validate_story_request(character, idea)
+    append_safety_audit_log(
+        event="input_save",
+        result=safety_result,
+        log_dir=OUTPUT_DIR,
+        metadata={"num_pages": num_pages, "style_key": style_key},
+    )
+    if not safety_result.allowed:
+        return jsonify({
+            "error": safety_result.message,
+            "safety": safety_result.to_dict(),
+        }), 400
+
+    # 若包含手机号、邮箱等隐私信息，使用脱敏后的文本继续后续流程
+    character = safety_result.sanitized_fields.get("character", character)
+    idea = safety_result.sanitized_fields.get("idea", idea)
+
     style = STYLE_TEMPLATES[style_key]
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -185,6 +208,12 @@ def api_save():
             "prompt": style["prompt"],
         },
         "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "safety_review": {
+            "checked_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "risk_level": safety_result.risk_level,
+            "categories": safety_result.categories,
+            "warnings": safety_result.warnings,
+        },
     }
 
     yaml_path = os.path.join(book_dir, "story_input.yaml")
@@ -240,8 +269,8 @@ def api_update_story(book_id):
     # 保留原有字段，仅更新用户可编辑的部分
     with open(script_path, "r", encoding="utf-8") as f:
         script = json.load(f)
-    if "title" in data:
-        script["title"] = str(data["title"]).strip()
+    new_title = str(data.get("title", script.get("title", ""))).strip()
+    updated_pages = script.get("pages", [])
     if "pages" in data and isinstance(data["pages"], list):
         updated_pages = []
         for i, p in enumerate(data["pages"]):
@@ -250,7 +279,29 @@ def api_update_story(book_id):
                 "text": str(p.get("text", "")).strip(),
                 "scene": str(p.get("scene", "")).strip(),
             })
-        script["pages"] = updated_pages
+
+    # 伦理合规检查：用户二次编辑后的标题、文字、场景描述也必须重新审核
+    safety_result = validate_story_script_update(new_title, updated_pages)
+    append_safety_audit_log(
+        event="story_update",
+        result=safety_result,
+        log_dir=OUTPUT_DIR,
+        metadata={"book_id": book_id, "page_count": len(updated_pages)},
+    )
+    if not safety_result.allowed:
+        return jsonify({
+            "error": safety_result.message,
+            "safety": safety_result.to_dict(),
+        }), 400
+
+    script["title"] = safety_result.sanitized_fields.get("title", new_title)
+    script["pages"] = safety_result.sanitized_fields.get("pages", updated_pages)
+    script["safety_review"] = {
+        "checked_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "risk_level": safety_result.risk_level,
+        "categories": safety_result.categories,
+        "warnings": safety_result.warnings,
+    }
     with open(script_path, "w", encoding="utf-8") as f:
         json.dump(script, f, ensure_ascii=False, indent=2)
     return jsonify({"ok": True, "script": script})
