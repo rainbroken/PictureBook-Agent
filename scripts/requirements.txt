@@ -1,5 +1,0 @@
-flask
-pyyaml
-requests
-pillow
-python-dotenv

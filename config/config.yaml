@@ -1,5 +1,5 @@
 qwen:
-  api_key: "sk-ws-H.REXDMEE.oxrt.MEUCIQCMgnZ5hH90TsuyHgxgSNYUdJq3y9hAZr4KxXXzlCK4lQIgEd-4hkWlUVjkAWUSf2ffyT1hu7FuM-Tm9Iawm_hOI8I"                          # 填入你的 DashScope API Key，或设置环境变量 DASHSCOPE_API_KEY
+  api_key: ""                          # 填入你的 DashScope API Key，或设置环境变量 DASHSCOPE_API_KEY
   base_url: "https://dashscope.aliyuncs.com/api/v1"
   default_model: "wan2.6-t2i"
   ref_model: "wan2.6-image"
@@ -11,7 +11,7 @@ qwen:
     "4": { name: "wanx2.1-t2i-plus",   desc: "万相2.1 专业版" }
 
 deepseek:
-  api_key: "sk-6801aa6cda314d6f864b1475339ea1ee"                          # 填入你的 DeepSeek API Key，或设置环境变量 DEEPSEEK_API_KEY
+  api_key: ""                          # 填入你的 DeepSeek API Key，或设置环境变量 DEEPSEEK_API_KEY
   base_url: "https://api.deepseek.com/v1"
   model: "deepseek-chat"
 
